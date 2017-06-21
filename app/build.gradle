@@ -42,6 +42,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // 极光推送
-    compile 'cn.jiguang.sdk:jpush:3.0.1'
-    compile 'cn.jiguang.sdk:jcore:1.1.0'
+    compile 'cn.jiguang.sdk:jpush:3.0.6'
+    compile 'cn.jiguang.sdk:jcore:1.1.3'
 }
