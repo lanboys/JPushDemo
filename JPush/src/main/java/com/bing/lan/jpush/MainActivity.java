@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bing.lan.voice.AudioUtils;
+
 import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends AppCompatActivity {
@@ -116,12 +118,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void myClick03(View v) {
-        // 1.获取提示框的系统服务
-        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        // 2.取消服务
-        manager.cancel(0x002);
-        // 3.取消所有提示(自己应用内部)
-        manager.cancelAll();
+        //// 1.获取提示框的系统服务
+        //NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //// 2.取消服务
+        //manager.cancel(0x002);
+        //// 3.取消所有提示(自己应用内部)
+        //manager.cancelAll();
+
+        AudioUtils.getInstance().speakText("123");
+
     }
 
     //http://www.jianshu.com/p/e1e20e0ee18c

@@ -14,8 +14,7 @@ android {
         //jpush
         ndk {
             //选择要添加的对应cpu类型的.so库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86_64', 'x86', 'mips', 'mips64'
-            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86', 'mips', 'mips64'
         }
         manifestPlaceholders = [
                 JPUSH_PKGNAME: "com.bing.lan.jpush",
@@ -41,9 +40,9 @@ dependencies {
     // 极光推送
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'cn.jiguang.sdk:jpush:3.0.6'
-    compile 'cn.jiguang.sdk:jcore:1.1.3'
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
     testCompile 'junit:junit:4.12'
-//    compile project(':Voice')
+    compile project(':Voice')
 
 }

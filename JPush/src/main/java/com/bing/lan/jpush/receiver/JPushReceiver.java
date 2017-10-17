@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.bing.lan.jpush.MainActivity;
 import com.bing.lan.jpush.R;
+import com.bing.lan.voice.AudioUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -169,9 +170,9 @@ public class JPushReceiver extends BroadcastReceiver {
         Notification notification = builder.build();
         manager.notify(0x002, notification);
 
-        //if (!TextUtils.isEmpty(message)) {
-        //    AudioUtils.getInstance().speakText(message);
-        //}
+        if (!TextUtils.isEmpty(message)) {
+            AudioUtils.getInstance().speakText(message);
+        }
 
         //}
     }
