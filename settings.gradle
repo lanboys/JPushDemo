@@ -1,1 +1,1 @@
-include ':JPush', ':Voice'
+include ':JPush', ':Voice', ':UPush', ':UPushSDK'
