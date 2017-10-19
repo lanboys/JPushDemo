@@ -51,7 +51,7 @@ public class AudioUtils {
     private InitListener myInitListener = new InitListener() {
         @Override
         public void onInit(int code) {
-            Log.d("mySynthesiezer:", "InitListener init() code = " + code);
+            Log.d("AudioUtils onInit", "InitListener init() code = " + code);
         }
     };
 
@@ -62,14 +62,19 @@ public class AudioUtils {
      * 创建时间: 2016/8/19 14:38
      */
     public void init(Context context) {
+
         //处理语音合成关键类
         mySynthesizer = SpeechSynthesizer.createSynthesizer(context, myInitListener);
-        //设置发音人
-        mySynthesizer.setParameter(SpeechConstant.VOICE_NAME, "xiaoyan");
-        //设置音调
-        mySynthesizer.setParameter(SpeechConstant.PITCH, "50");
-        //设置音量
-        mySynthesizer.setParameter(SpeechConstant.VOLUME, "50");
+        if (mySynthesizer != null) {
+            //设置发音人
+            mySynthesizer.setParameter(SpeechConstant.VOICE_NAME, "xiaoyan");
+            //设置音调
+            mySynthesizer.setParameter(SpeechConstant.PITCH, "50");
+            //设置音量
+            mySynthesizer.setParameter(SpeechConstant.VOLUME, "50");
+        } else {
+            Log.e("AudioUtils init", "mySynthesizer == null");
+        }
     }
 
     /**
@@ -79,6 +84,11 @@ public class AudioUtils {
      * 创建时间: 2016/8/19 14:39
      */
     public void speakText(String content) {
+        if (mySynthesizer == null) {
+            Log.e("AudioUtils speakText", "mySynthesizer == null");
+            return;
+        }
+
         int code = mySynthesizer.startSpeaking(content, new SynthesizerListener() {
             @Override
             public void onSpeakBegin() {

@@ -33,5 +33,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile project(':UPushSDK')
+    compile project(':Voice')
+
 
 }
